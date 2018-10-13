@@ -1,0 +1,18 @@
+language: nodejs
+sudo: false
+cache:
+  directories:
+  - "node_modules"
+before_script:
+- npm run setup
+- npm run build
+script:
+- npm run test-only
+deploy:
+- provider: heroku
+  app:
+    master: coc-frontend
+    development: coc-frontend-dev
+  skip_cleanup: true
+  api_key:
+    secure: b6dmH68MQ7mFMI44BAUAsNAROMeWDb5VPf4lc+TRwK4PUMb1MPvkg2sEoJXC92aSDqWSFVPn8+mh1FOyJBCePkYEjyilyQFQNogCbGFp4kF034gr6oRcckTWh+uYUHOHNknynwpOyZ6b0VilcK+EC0qvSD8WxuJjJtydstTJAs1nHyGiGRssT2nW0fBtEWuuFitYTHT377N8jGGPn+UdJLT0v8WeRww8PDpvXUTKpKiwjAnYavCpOatsU01Ulhm4PgMAn5GPD7MQ8+PuOPnQfuMvP9zrQS3aoDuHkQGDw6SelSig1vfRzcqc9sDEpjpoH1Qv/tZDDQJMbb0EZeC01/ze2wSubJEFYe6bS2+BmRtkncEIXO6InVqcXtk6WDTMWBtGW+sU1WxGD6OFjuOLZXM001ZNs2FeX4gbPGH3nfgVhNGOB+44dMpQgXR8ilQrFdqTQRSxDKTlzFMNRDVpupQdpUACd/JjA8BEZFwZ7ZPTVQ8gVHcDY+v0UMCuiUeuQ0cITxbuYP5EC6AnxRTCnZ3K1SPIh/yPWBAlD8QgopEV677dTTvV/24jE2oamJEKS+O1CvGn5axC1QwP4kls4CyZpFNlPmWex/1Sa8eJ0p/3Gm/y3/yaHRL9/7j/47EjNgfonO9Hq5pPcj6xBlouH8UWG6r6CN6qrufhnoSH6VY=
