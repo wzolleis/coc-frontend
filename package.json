@@ -17,6 +17,9 @@
     "posttypedoc": "shx cp .nojekyll docs/.nojekyll",
     "eject": "react-scripts-ts eject"
   },
+  "engines": {
+    "node": "8.11.4"
+  },
   "devDependencies": {
     "@types/jest": "^23.3.5",
     "@types/node": "^10.11.7",
