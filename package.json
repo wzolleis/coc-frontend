@@ -8,9 +8,13 @@
     "react-scripts-ts": "3.1.0"
   },
   "scripts": {
+    "setup": "npm install",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
+    "test-only": "cross-env CI=true react-scripts-ts test --env=jsdom",
+    "typedoc": "typedoc --ignoreCompilerErrors --out ./docs --mode modules --module commonjs --tsconfig ./tsconfig.json ./src/",
+    "posttypedoc": "shx cp .nojekyll docs/.nojekyll",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
