@@ -16,7 +16,8 @@
     "test-only": "cross-env CI=true react-scripts-ts test --env=jsdom",
     "typedoc": "typedoc --ignoreCompilerErrors --out ./docs --mode modules --module commonjs --tsconfig ./tsconfig.json ./src/",
     "posttypedoc": "shx cp .nojekyll docs/.nojekyll",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
   "engines": {
     "node": "8.11.4"
@@ -35,5 +36,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "heroku-run-build-script": true
 }
